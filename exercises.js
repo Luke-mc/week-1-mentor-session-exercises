@@ -5,6 +5,22 @@
  * @return {string} reversed
  * ie: "cat" => "tac"
  */
+  function firstReverse(str){
+ 
+ if(typeof str != "string"){
+
+ return null
+
+ }
+ else{
+ 	var split = str.split("")
+ 	var rev = split.reverse()
+ 	var end = rev.join("")
+
+ 	return end
+ }
+}
+
 
  /** Function: alphaOrder
  * The function will take the str parameter being passed in and
@@ -14,6 +30,27 @@
  * ie: "cake" => "acek"
  */
 
+ function alphaOrder(str){
+ 
+ if(typeof str != "string"){
+
+ return null
+
+ }
+ else{
+
+	var split = str.split("")
+ 	var sort = split.sort()
+ 	var end = sort.join("")
+
+ 	return end
+ 	
+ 	
+ }
+}
+
+
+
  /** Function: vowelCount
  * The function will take the str parameter being passed in and
  * return the number of vowels in the string
@@ -21,6 +58,41 @@
  * @return {number} count of vowels
  * ie: "oreo" => 3
  */
+
+ 
+	
+ 	
+function vowelCount(str){
+
+var c = 0;
+
+
+var v = ["a","e","i","o","u"];
+
+
+	for(var i = 0; i < str.length; i++){
+
+		if( -1 != v.lastIndexOf(str[i])) {
+
+    		c ++ ;
+ 		
+ 		}
+
+   			
+   			}
+
+if(typeof str != "string"){
+
+   				return null
+
+	}
+
+ return c
+
+}
+
+
+ vowelCount("oreo");
 
  /** Function: timeConvert
  * The function will take the str parameter representing the amount of minutes being passed in and
@@ -31,6 +103,29 @@
  * ie: 68 => 1:8
  */
 
+
+function timeConvert(num){
+
+	
+if(typeof num === "number"){
+
+    var hour = Math.floor(num/60);
+
+  	var min = num % 60 ;
+
+   return hour + ":" + min
+}
+
+else{
+
+	return null
+   		
+}
+
+}
+
+
+
  /** Function: repeatString
  * The function will take in two parameters and repeat a given string (first argument)
  * num times (second argument). Return an empty string if num is a negative number
@@ -40,6 +135,24 @@
  * i.e repeatString("money", 3) => "moneymoneymoney".
  */
 
+function repeatString(str,num){
+
+if(typeof str === "string"){
+	
+var repeat = str.repeat(num); 
+
+return repeat
+
+}
+
+if(typeof num != "number"){
+
+	return null
+}
+
+}
+
+repeatString("hi" , 3000);
 
 /**
  * Below here we see a module.exports which is set to an object with a bunch of keys.
@@ -56,9 +169,9 @@
  */
 
 module.exports = {
-    firstReverse: null,
-    alphaOrder: null,
-    vowelCount: null,
-    timeConvert: null,
-    repeatString: null
+    firstReverse: firstReverse,
+    alphaOrder: alphaOrder,
+    vowelCount: vowelCount,
+    timeConvert: timeConvert,
+    repeatString: repeatString
 }
